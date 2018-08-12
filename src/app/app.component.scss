@@ -1,0 +1,11 @@
+.app-wrapper {
+    display: flex;
+    margin: 0 250px;
+}
+
+@media screen and (max-width: 1300px) {
+
+    .app-wrapper {
+        margin: 0 50px;
+    }
+}

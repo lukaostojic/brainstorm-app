@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+// Variables
+
+$main-back: #f5c823;
+
+$text-color: #272727;
+
+// Mixins
+
+// General
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: $main-back;
+    color: $text-color;
+    overflow-x: hidden;
+    font-family: 'Sunflower', sans-serif;
+    letter-spacing: 1px;
+}
+
+ul li {
+    list-style: none;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+// Reusable
+
+.flex-w {
+    display: flex;
+}
+
+.flex-h {
+    display: flex;
+    flex-direction: column;
+}

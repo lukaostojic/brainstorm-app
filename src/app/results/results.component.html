@@ -1,0 +1,18 @@
+<div class="component-wrapper">
+	<div class="results flex-h">
+		<div class="summary-message">	
+			<p>Congratulations! You found <span> {{ ideasArr }} </span> outputs to the challenge in <span> {{ timeMins }} </span> minutes.</p>
+			<p>That's <span> {{ ideaPerMinute | number : '1.2-2' }} </span> outputs every minute.</p>
+		</div>
+
+		<div class="continue-bs flex-w">
+			<p>Do you want to push yourself for one minute more?</p>
+			<a routerLink="/brainstorm" id="yes" (click)="addOneMinute()">Yes</a>
+			<a routerLink="/sorting" id="no">No</a>
+		</div>
+
+		<div class="flex-w">
+			<a routerLink="/sorting" (click)="getIdeas()" id="next-btn" class="next-step-btn">Next Step <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div class="component-wrapper">
+	<div class="brainstorm flex-h">
+		<div class="value-display flex-w">
+			<p>{{ question }}</p>
+			<div>
+				<!-- <div class="timer-wrapper">
+					<span class="timer" [ngStyle]="{'width.%': overallTime}"></span>
+				</div> -->
+				<span *ngIf="!timeIsUp">{{ timeMins }}.{{ timeSeconds }}</span>
+				<span *ngIf="timeIsUp">Time's up!</span>
+			</div>
+		</div>
+
+		<div class="list-of-ideas flex-w">
+			<input [(ngModel)]="idea" type="text" id="idea-input" autofocus>
+			<button (click)="ideaSubmit()" id="add-btn">Add <span><i class="fa fa-plus" aria-hidden="true"></i></span></button>
+		</div>
+
+		<div class="flex-w">
+			<a routerLink="/results" (click)="getIdeas()" class="next-step-btn" id="next-btn">Next Step <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</div>

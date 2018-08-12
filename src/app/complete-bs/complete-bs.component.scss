@@ -1,0 +1,101 @@
+$main-back: #f5c823;
+
+$text-color: #272727;
+
+.challenge {
+    height: calc(100vh - 145px);
+    justify-content: space-around;
+
+    .flex-h {
+
+        div {
+            justify-content: space-between;
+
+            h4 {
+                position: relative;
+                bottom: 4px;
+                font-size: 1.5em;
+            }
+        }
+
+        label, input {
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        label {
+            width: 500px;
+            padding: 10px;
+            background: #fff;
+
+            &:before {
+                padding: 15px 15px 15px 7.5px;
+                border-right: 5px solid $main-back;
+                color: $main-back;
+                font-size: 1.5em;
+            }
+        }
+
+        input, ul {
+            position: relative;
+            left: 15%;
+            width: 70%;
+            padding-bottom: 5px;
+            background: none;
+            outline: none;
+            border: none;
+            border-bottom: 3px solid #fff;
+            font-size: 1.5em;
+        }
+
+        input[type="range"] {
+            padding-bottom: 0;
+        }
+
+        ul {
+            justify-content: space-between;
+            border-bottom: none;
+        }
+    }
+
+    div {
+        justify-content: flex-end;
+
+        .next-step-btn {
+            padding: 10px;
+            background: $text-color;
+            color: #fff;
+            border-radius: 2px;
+            text-align: right;
+            font-size: 1.5em;
+            transition: all 0.25s ease-in-out;
+
+            i {
+                position: relative;
+                top: 2px;
+                transition: all 0.25s ease-in-out;
+            }
+        }
+
+        .next-step-btn:hover {
+            background: #3c3c3c;
+            color: $main-back;
+
+            i {
+                color: $main-back
+            }
+        }
+    }
+
+    .flex-h:nth-child(1) label:before {
+        content: '1';
+    }
+
+    .flex-h:nth-child(2) label:before {
+        content: '2';
+    }
+
+    .flex-h:nth-child(2) label {
+        margin-bottom: 50px;
+    }
+}

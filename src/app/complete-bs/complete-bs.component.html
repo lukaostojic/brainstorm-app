@@ -1,0 +1,28 @@
+<div class="component-wrapper">
+	<div class="challenge flex-h">
+		<div class="flex-h">
+			<label for="question">&nbsp;Write down a problem to sovle</label>
+			<input type="text" [(ngModel)]="question" autofocus>
+		</div>
+
+		<div class="flex-h">
+			<label for="time">&nbsp;Choose the length of your brainstorming (minutes)</label> 
+			<div class="flex-w">
+				<input type="range" id="range-slider" name="time" [(ngModel)]="selectedValue" min="{{ timeRangeMin }}" max="{{ timeRangeMax }}" value="1" step="1"/>
+				<h4>minutes: {{ selectedValue }}</h4>
+			</div>
+			<ul class="flex-w">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+
+		<div class="flex-w">
+			<a routerLink="/brainstorm" (click)="getQuestion()" id="next" class="next-step-btn">Next Step <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</div>
