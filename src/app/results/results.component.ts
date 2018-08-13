@@ -10,14 +10,15 @@ export class ResultsComponent implements OnInit {
 	public time = localStorage.getItem('selectedValue');
 	public timeMins = parseInt(this.time);
 	public listOfIdeas = localStorage.getItem('listOfIdeas');
-	public ideas = JSON.parse(this.listOfIdeas);
-	public ideasArr = this.ideas.length;
-	public ideaPerMinute = this.ideasArr / this.timeMins;
+	public nrOfIdeasS = localStorage.getItem('nrOfIdeas');
+	public nrOfIdeasN = parseInt(this.nrOfIdeasS);
+	public ideaPerMinute = this.nrOfIdeasN / this.timeMins;
 	public isSecondSession = false;
 
 	addOneMinute() {
+		this.isSecondSession = true;
 		localStorage.setItem('selectedValue', '1');
-		localStorage.setItem('listOfIdeas', this.listOfIdeas);
+		localStorage.setItem('isSecondSession', this.isSecondSession.toString());
 	}
 
 	constructor() { }
@@ -30,13 +31,12 @@ export class ResultsComponent implements OnInit {
 			let keyName = event.key;
 			let keyCode = event.keyCode;
 
-			if (keyName == 'y') {
-				this.isSecondSession = true;
-				localStorage.setItem('isSecondSession', this.isSecondSession.toString());
+			if (keyName == 'y' && yesBtn) {
+				this.addOneMinute();
 				yesBtn.click();
-			} else if (keyName == 'n') {
+			} else if (keyName == 'n' && noBtn) {
 				noBtn.click();
-			} else if (keyCode == 13) {
+			} else if (keyCode == 13 && nextBtn) {
 				nextBtn.click();
 			}
 		});

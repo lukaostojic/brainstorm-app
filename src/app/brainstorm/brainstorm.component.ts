@@ -9,7 +9,7 @@ export class BrainstormComponent implements OnInit {
 
 	constructor() { }
 
-	// Countdown timer
+	// Countdown timers
 	public question = localStorage.getItem('writtenQuestion');
 	public time = localStorage.getItem('selectedValue');
 	public timeMins = parseInt(this.time) - 1;
@@ -53,29 +53,31 @@ export class BrainstormComponent implements OnInit {
 	}
 
 	// Iist of ideas
-	public theList = [];
+	public ideasList = [];
 	public idea = '';
+	public isSecondSession = localStorage.getItem('isSecondSession');
+	public nrOfIdeas = 0;
+	public oldSession;
 
 	ideaSubmit() {
-		this.theList.push(this.idea);
+		this.ideasList.push(this.idea);
 		this.idea = '';
+		this.nrOfIdeas++;
 	}
 
 	getIdeas() {
-		localStorage.setItem('listOfIdeas', JSON.stringify(this.theList));
-	}
-
-	// New session
-	addNewIdeas() {
-		let isSecondSession = localStorage.getItem('isSecondSession');
-
-		if (isSecondSession == 'true') {
-			console.log('second session')
-		}
+		localStorage.setItem('listOfIdeas', JSON.stringify(this.ideasList));
+		localStorage.setItem('nrOfIdeas', this.nrOfIdeas.toString());
 	}
 
 	ngOnInit() {
-		// this.addNewIdeas();
+		if (this.isSecondSession == 'true') {
+			this.oldSession = JSON.parse(localStorage.getItem('listOfIdeas'));
+			
+			for (let i = 0; i < this.oldSession.length; i++) {
+				this.ideasList.push(this.oldSession[i]);
+			}
+		}
 
 		let ideaInput: HTMLElement = document.getElementById('idea-input') as HTMLElement;
 		ideaInput.focus();
@@ -92,7 +94,7 @@ export class BrainstormComponent implements OnInit {
 			let keyCode = event.keyCode;
 
 			if (keyCode == 17) {
-				addBtn.click();
+				this.ideaSubmit();
 			} else if (keyCode == 13) {
 				nextBtn.click();
 			}

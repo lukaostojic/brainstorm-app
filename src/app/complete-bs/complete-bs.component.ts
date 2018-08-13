@@ -25,9 +25,9 @@ export class CompleteBsComponent implements OnInit {
 			let nextBtn: HTMLElement = document.getElementById('next') as HTMLElement;
 			let keyCode = event.keyCode;
 			
-			if (keyCode == 17) {
+			if (keyCode == 17 && rSlider) {
 				rSlider.focus();
-			} else if (keyCode == 13) {
+			} else if (keyCode == 13 && rSlider && nextBtn) {
 				rSlider.blur();
 				nextBtn.click();
 			}
