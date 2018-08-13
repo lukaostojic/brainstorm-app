@@ -1,5 +1,16 @@
-<ul>
-	<li *ngFor="let idea of ideas">
-		<input type="checkbox">{{ idea }}
-	</li>
-</ul>
+<div class="component-wrapper">
+	<div class="results flex-h">
+		<p>{{ question }}</p>
+		<label>Select up to 5 of the most appropriate ideas</label>
+
+		<ul>
+			<li *ngFor="let idea of ideas" class="flex-w list-item">
+				<input type="checkbox">{{ idea }}
+			</li>
+		</ul>
+
+		<div class="flex-w">
+			<a routerLink="/cost-impact" id="next-btn" class="next-step-btn">Next Step <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+		</div>
+	</div>
+</div>

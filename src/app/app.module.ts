@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
-import { IdeasService } from './services/ideas.service';
-
 import { AppComponent } from './app.component';
 import { StepIndicatorComponent } from './step-indicator/step-indicator.component';
 import { IntroComponent } from './intro/intro.component';
@@ -21,14 +19,14 @@ import { SortingComponent } from './sorting/sorting.component';
 		CompleteBsComponent,
 		BrainstormComponent,
 		ResultsComponent,
-		SortingComponent
+		SortingComponent,
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		FormsModule
 	],
-	providers: [IdeasService],
+	providers: [],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
