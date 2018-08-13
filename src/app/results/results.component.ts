@@ -14,6 +14,7 @@ export class ResultsComponent implements OnInit {
 	public nrOfIdeasN = parseInt(this.nrOfIdeasS);
 	public ideaPerMinute = this.nrOfIdeasN / this.timeMins;
 	public isSecondSession = false;
+	public position = 'results';
 
 	addOneMinute() {
 		this.isSecondSession = true;
@@ -24,6 +25,8 @@ export class ResultsComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
+		localStorage.setItem('position', this.position);
+
 		document.addEventListener('keydown', (event) => {	
 			let yesBtn: HTMLElement = document.getElementById('yes') as HTMLElement;
 			let noBtn: HTMLElement = document.getElementById('no') as HTMLElement;

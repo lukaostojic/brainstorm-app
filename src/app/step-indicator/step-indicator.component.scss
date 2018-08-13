@@ -30,6 +30,7 @@ header {
                 background: $main-back;
                 border: 2px solid #fff;
                 border-radius: 100%;
+                transition: all 0.25s;
             }
 
             span {
@@ -44,4 +45,8 @@ header {
             }
         }
     }
+}
+
+.active {
+    background: #fff !important;
 }

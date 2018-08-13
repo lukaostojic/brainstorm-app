@@ -12,11 +12,15 @@ export class SortingComponent implements OnInit {
 	public question = localStorage.getItem('writtenQuestion');
 	public listOfIdeas = localStorage.getItem('listOfIdeas');
 	public ideas = JSON.parse(this.listOfIdeas);
+	public position = 'sorting';
 
 	constructor() { }
 
 	ngOnInit() {
+		localStorage.setItem('position', this.position);
+
 		let ideaInput;
+		let nextBtn: HTMLElement = document.getElementById('next-btn') as HTMLElement;
 
 		setTimeout(() => {
 			ideaInput = document.getElementsByClassName('list-item');
@@ -25,16 +29,19 @@ export class SortingComponent implements OnInit {
 
 			currentElem.focus();
 
-			document.addEventListener('keydown', (event) => {	
+			document.addEventListener('keydown', (event) => {
+				let keyCode = event.keyCode;	
 
-				if (event.keyCode == 40) { 
+				if (keyCode == 40 && currentElem) { 
 					inc++;
 					currentElem = ideaInput[inc].children[0];
 					currentElem.focus();
-				} else if (event.keyCode == 38) {      
+				} else if (keyCode == 38 && currentElem) {      
 					inc--;
 					currentElem = ideaInput[inc].children[0];
 					currentElem.focus();
+				} else if (keyCode == 13) {
+					nextBtn.click();
 				}
 
 				if (inc == ideaInput.length -1) {

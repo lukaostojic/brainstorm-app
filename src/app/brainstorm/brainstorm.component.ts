@@ -17,6 +17,7 @@ export class BrainstormComponent implements OnInit {
 	public overallTime = ((this.timeMins + 1 ) * this.timeSeconds);
 	public timeIsUp = false;
 	public fixedSeconds = 60;
+	public position = 'brainstorm';
 
 	public countdownSeconds() {
 		let secondsInterval = setInterval(() => {
@@ -71,6 +72,8 @@ export class BrainstormComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		localStorage.setItem('position', this.position);
+
 		if (this.isSecondSession == 'true') {
 			this.oldSession = JSON.parse(localStorage.getItem('listOfIdeas'));
 			

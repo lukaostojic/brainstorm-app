@@ -10,6 +10,7 @@ import { CompleteBsComponent } from './complete-bs/complete-bs.component';
 import { BrainstormComponent } from './brainstorm/brainstorm.component';
 import { ResultsComponent } from './results/results.component';
 import { SortingComponent } from './sorting/sorting.component';
+import { CostImpactComponent } from './cost-impact/cost-impact.component';
 
 @NgModule({
 	declarations: [
@@ -20,6 +21,7 @@ import { SortingComponent } from './sorting/sorting.component';
 		BrainstormComponent,
 		ResultsComponent,
 		SortingComponent,
+		CostImpactComponent,
 	],
 	imports: [
 		BrowserModule,

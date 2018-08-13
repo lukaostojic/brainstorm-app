@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroComponent implements OnInit {
 
+	public position = 'intro';
+
 	constructor() { }
 
 	ngOnInit() {
 		localStorage.clear();
+		localStorage.setItem('position', this.position);
 
 		document.addEventListener('keydown', (event) => {
 			let completeBs: HTMLElement = document.getElementById('complete') as HTMLElement;

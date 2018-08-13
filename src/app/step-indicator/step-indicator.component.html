@@ -2,27 +2,27 @@
 	<div class="deco-line"></div>
 	<div class="indicator flex-w">
 		<div>
-			<a tabindex="-1" href=""></a>
+			<a [ngStyle]="{'background-color': position === 'intro' ? '#fff' : '#f5c823' }" style="background-color: #fff;" href=""></a>
 			<span>intro</span>
 		</div>
 
 		<div>
-			<a tabindex="-1" href=""></a>
+			<a [ngStyle]="{'background-color': position === 'completeBs' ? '#fff' : '#f5c823' }" tabindex="-1" href=""></a>
 			<span>challenge</span>
 		</div>
 
 		<div>
-			<a tabindex="-1" href=""></a>
+			<a [ngStyle]="{'background-color': position === 'brainstorm' ? '#fff' : '#f5c823' }" tabindex="-1" href=""></a>
 			<span>brainstorm</span>
 		</div>
 
 		<div>
-			<a tabindex="-1" href=""></a>
+			<a [ngStyle]="{'background-color': position === 'results' ? '#fff' : '#f5c823' }" tabindex="-1" href=""></a>
 			<span>results</span>
 		</div>
 
 		<div>
-			<a tabindex="-1" href=""></a>
+			<a [ngStyle]="{'background-color': position === 'sorting' ? '#fff' : '#f5c823' }" tabindex="-1" href=""></a>
 			<span>sorting</span>
 		</div>
 
@@ -37,3 +37,5 @@
 		</div>
 	</div>
 </header>
+
+<!-- old main color = f5c823 -->

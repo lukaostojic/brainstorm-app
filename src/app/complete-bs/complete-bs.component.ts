@@ -7,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompleteBsComponent implements OnInit {
 
-	private timeRangeMin = 1;
-	private timeRangeMax = 6;
-	private selectedValue = 1;
-	private question = '';
+	public timeRangeMin = 1;
+	public timeRangeMax = 6;
+	public selectedValue = 1;
+	public question = '';
+	public position = 'completeBs';
 
 	getQuestion() {
 		localStorage.setItem('writtenQuestion', this.question);
@@ -20,6 +21,8 @@ export class CompleteBsComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
+		localStorage.setItem('position', this.position);
+
 		document.addEventListener('keydown', (event) => {
 			let rSlider: HTMLElement = document.getElementById('range-slider') as HTMLElement;
 			let nextBtn: HTMLElement = document.getElementById('next') as HTMLElement;

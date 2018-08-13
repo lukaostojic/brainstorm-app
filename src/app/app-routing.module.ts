@@ -6,6 +6,7 @@ import { CompleteBsComponent } from './complete-bs/complete-bs.component';
 import { BrainstormComponent } from './brainstorm/brainstorm.component';
 import { ResultsComponent } from './results/results.component';
 import { SortingComponent } from './sorting/sorting.component';
+import { CostImpactComponent } from './cost-impact/cost-impact.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/intro', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
 	{ path: 'brainstorm', component: BrainstormComponent },
 	{ path: 'results', component: ResultsComponent },
 	{ path: 'sorting', component: SortingComponent },
+	{ path: 'cost-impact', component: CostImpactComponent },
 ];
 
 @NgModule({
